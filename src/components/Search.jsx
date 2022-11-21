@@ -5,7 +5,7 @@ const Search = ({ onSubmit, value, onChange }) => {
                 type="text"
                 name="search"
                 value={value}
-                placeholder="Search Games"
+                placeholder="Search"
                 onChange={onChange}
             ></input>
             <button type="submit">Search</button>

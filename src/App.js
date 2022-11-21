@@ -10,6 +10,7 @@ import Search from './components/Search'
 import Courses from './pages/Courses'
 import Students from './pages/Students'
 import AddCourse from './pages/AddCourse'
+import Transcript from './pages/Transcript'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -37,7 +38,11 @@ function App() {
   return (
     <div className="App">
       <header>
-        <Nav />
+        <Nav
+          authenticated={authenticated}
+          user={user}
+          handleLogOut={handleLogOut}
+        />
       </header>
       <main>
         <Routes>
@@ -64,6 +69,10 @@ function App() {
           <Route
             path="/addCourse"
             element={<AddCourse user={user} authenticated={authenticated} />}
+          />
+          <Route
+            path="/transcript/:id"
+            element={<Transcript user={user} authenticated={authenticated} />}
           />
         </Routes>
       </main>
