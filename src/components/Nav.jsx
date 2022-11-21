@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 
+
 const Nav = ({ authenticated, user, handleLogOut }) => {
     let authenticatedOptions
     if (user) {
@@ -10,6 +11,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
           <Link to='/addCourse'>Add A Course</Link>
           <Link to='/students'>Students</Link>
           <Link to= '/search'>Search</Link>
+          {/* <Link to='/transcript/:id'>My Transcript</Link> */}
           <Link onClick={handleLogOut} to="/">
             Sign Out
           </Link>
