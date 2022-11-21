@@ -36,5 +36,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "## Date: 11/19/2022",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OliviaSchwartz/Transcript-Hackathon-Front.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OliviaSchwartz/Transcript-Hackathon-Front/issues"
+  },
+  "homepage": "https://github.com/OliviaSchwartz/Transcript-Hackathon-Front#readme"
 }
