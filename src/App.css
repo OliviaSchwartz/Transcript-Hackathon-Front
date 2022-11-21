@@ -1,9 +1,92 @@
-.nav {
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  padding: 1em 1.5em;
+  font-size: 1.1rem;
+}
+
+
+header {
+  height: 3em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 20px;
+  flex-direction: row-reverse;
+}
+
+nav {
+  margin-right: 1em;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 1.2em;
+}
+
+nav a,
+nav h3 {
+  margin: auto 1em;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: 800;
+  transition: all 0.2s ease;
+}
+
+main {
+  min-height: calc(100vh - 4em);
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-container,
+.signin {
+  min-height: calc(100vh - 4em);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color:#091e00;
+}
+
+.card-overlay {
+  border: 2px solid;
+  width: 60%;
   padding: 1em;
-  color: white;
-  min-height: 2em
+  box-shadow: 2px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+form,
+.input-wrapper {
+  margin: auto;
+  width: 80%;
+}
+
+form label {
+  align-self: flex-start;
+}
+
+.input-wrapper {
+  width: 80%;
+  margin: 0;
+  padding: 0;
+}
+
+.input-wrapper input {
+  padding: 0.6em 1.2em;
+  margin: 0.5em auto;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+input::placeholder {
+  opacity: 0.5;
 }
