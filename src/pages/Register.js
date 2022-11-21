@@ -41,7 +41,7 @@ const Register = ({ setUser, toggleAuthenticated }) => {
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder="John Smith"
+              placeholder="Amy Adams"
               value={formValues.name}
               required
             />
