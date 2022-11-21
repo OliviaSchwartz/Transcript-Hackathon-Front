@@ -2,9 +2,8 @@ import {Link} from 'react-router-dom'
 
 
 const Nav = ({ authenticated, user, handleLogOut }) => {
-    let authenticatedOptions
-    if (user) {
-      authenticatedOptions = (
+
+      const authenticatedOptions = (
         <nav>
           <h3>Welcome!</h3>
           <Link to='/courses'>Courses</Link>
@@ -17,7 +16,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
           </Link>
         </nav>
       )
-    }
+    
 
     const publicOptions = (
       <nav>
