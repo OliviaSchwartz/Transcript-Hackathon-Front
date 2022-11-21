@@ -7,6 +7,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
         <nav>
           <h3>Welcome!</h3>
           <Link to='/courses'>Courses</Link>
+          <Link to='/addCourse'>Add A Course</Link>
           <Link to='/students'>Students</Link>
           <Link to= '/search'>Search</Link>
           <Link onClick={handleLogOut} to="/">
@@ -18,8 +19,8 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
 
     const publicOptions = (
       <nav>
-         <Link to="/register">Register</Link>
         <Link to="/login">Sign In</Link>
+        <Link to="/register">Register</Link>
         <Link to="/">Home</Link>
       </nav>
     )
