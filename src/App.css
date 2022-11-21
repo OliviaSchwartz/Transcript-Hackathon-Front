@@ -91,3 +91,7 @@ form label {
 input::placeholder {
   opacity: 0.5;
 }
+
+.course-container {
+  cursor:pointer;
+}
