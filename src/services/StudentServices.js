@@ -8,6 +8,16 @@ export const GetStudents = async () => {
     throw error
   }
 }
+
+export const GetStudentById = async (id) => {
+  try {
+    const res = await Client.get(`/students/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
 export const DeleteStudent = async (id) => {
   try {
     const res = await Client.delete(`/students/${id}`)
