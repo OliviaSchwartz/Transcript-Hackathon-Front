@@ -4,7 +4,7 @@ export const SignInUser = async (data) => {
   try {
     const res = await Client.post('/auth/login', data)
     localStorage.setItem('token', res.data.token)
-    return res.data.user
+    return res.data.student
   } catch (error) {
     throw error
   }
