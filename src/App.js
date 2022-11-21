@@ -7,6 +7,9 @@ import LogIn from './pages/LogIn'
 import Register from './pages/Register'
 import { CheckSession } from './services/AuthServices'
 import Search from './components/Search'
+import Courses from './pages/Courses'
+import Students from './pages/Students'
+import AddCourse from './pages/AddCourse'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -50,6 +53,18 @@ function App() {
           />
           <Route path="/register" element={<Register />} />
           <Route path="/search" element={<Search />} />
+          <Route
+            path="/courses"
+            element={<Courses user={user} authenticated={authenticated} />}
+          />
+          <Route
+            path="/students"
+            element={<Students user={user} authenticated={authenticated} />}
+          />
+          <Route
+            path="/addCourse"
+            element={<AddCourse user={user} authenticated={authenticated} />}
+          />
         </Routes>
       </main>
     </div>
