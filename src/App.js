@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import LogIn from './pages/LogIn'
 import Register from './pages/Register'
 import { CheckSession } from './services/AuthServices'
+import Search from './components/Search'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -48,6 +49,7 @@ function App() {
             }
           />
           <Route path="/register" element={<Register />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </main>
     </div>
