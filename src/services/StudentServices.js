@@ -26,3 +26,12 @@ export const DeleteStudent = async (id) => {
     throw error
   }
 }
+
+export const UpdateGpa = async (id) => {
+  try {
+    const res = await Client.put(`/students/gpa/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
