@@ -94,4 +94,30 @@ input::placeholder {
 
 .course-container {
   cursor:pointer;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+ .card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr,;
+
+}
+
+.students {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  flex-direction: column;
+}
+
+.student-card, .course-card {
+  margin: 25px;
+  padding: 10px;
+  border: 1px solid black
+}
+
+.student-info {
+  text-align: center;
 }
