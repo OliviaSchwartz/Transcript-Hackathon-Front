@@ -22,7 +22,7 @@ const Transcript = ({ user, authenticated, convertGrade, studentId }) => {
 
   return (
     <div className="transcript-container">
-      <p>{user?.email}</p>
+      <p>{studentDetails?.email}</p>
       <p>Student Name:{studentDetails?.name}</p>
       <div className="course-container">
         {studentDetails?.courses.map((course) => (
