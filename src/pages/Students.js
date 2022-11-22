@@ -22,13 +22,15 @@ const Students = () => {
 
   return (
     <div className="student-information">
-      {students?.map((student) => (
-        <StudentCard
-          key={student?.id}
-          name={student?.name}
-          onClick={() => viewTranscript(student?.id)}
-        />
-      ))}
+      <div className="students">
+        {students?.map((student) => (
+          <StudentCard
+            key={student?.id}
+            name={student?.name}
+            onClick={() => viewTranscript(student?.id)}
+          />
+        ))}
+      </div>
     </div>
   )
 }
