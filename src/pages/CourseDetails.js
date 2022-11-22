@@ -47,11 +47,11 @@ const CourseDetails = ({ user, authenticated }) => {
     <div>
       {authenticated && user ? (
         <div>
-          <p>course details</p>
-          <p>{students?.name}</p>
+           <p className="details-header">Course Details</p>
+          <p className="class-name">{students?.name}</p>
           {students?.students.map((student) => (
-            <div key={student.id}>
-              <p>{student.name}</p>
+            <div className="course-students" key={student.id}>
+              <p className="course-student-name">{student.name}</p>
               <p>{student.Grade.grade}</p>
               {studentToEdit === student.id ? (
                 <form
@@ -94,6 +94,7 @@ const CourseDetails = ({ user, authenticated }) => {
           </section>
         </div>
       )}
+
     </div>
   )
 }

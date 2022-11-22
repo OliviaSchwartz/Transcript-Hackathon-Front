@@ -7,7 +7,7 @@ const Home = ({ user, authenticated, convertGrade }) => {
     <div className="home-container col">
       {user && authenticated ? (
         <div>
-          <p>User home</p>
+          <p className="welcome">Welcome!</p>
           <Transcript
             user={user}
             authenticated={authenticated}

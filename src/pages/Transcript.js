@@ -24,19 +24,25 @@ const Transcript = ({ user, authenticated, convertGrade, studentId }) => {
     <div>
       {authenticated && user ? (
         <div className="transcript-container">
-          <p>{studentDetails?.email}</p>
-          <p>Student Name:{studentDetails?.name}</p>
+        <p className="display">
+        <em>Student Email:</em> {studentDetails?.email}
+        </p>
+         <p className="display">
+        <em>Student Name:</em> {studentDetails?.name}
+         </p>
           <div className="course-container">
             {studentDetails?.courses.map((course) => (
-              <div key={course.id}>
-                <p>Course Name: {course.name}</p>
-                <p>
-                  Course Grade(Number/Letter): {course.Grade.grade},{' '}
-                  {convertGrade(course.Grade.grade)}
-                </p>
-              </div>
-            ))}
+              <div className="course-name-grade" key={course.id}>
             <p>
+              <em>Course Name:</em> {course.name}
+            </p>
+            <p>
+              <em>Course Grade(Number/Letter):</em> {course.Grade.grade},{' '}
+              {convertGrade(course.Grade.grade)}
+            </p>
+          </div>
+            ))}
+            <p className="display">
               Overall GPA: {studentDetails?.gpa},{' '}
               {convertGrade(studentDetails?.gpa)}
             </p>
@@ -57,6 +63,7 @@ const Transcript = ({ user, authenticated, convertGrade, studentId }) => {
           </section>
         </div>
       )}
+
     </div>
   )
 }
