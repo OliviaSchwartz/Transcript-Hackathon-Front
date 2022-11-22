@@ -12,6 +12,7 @@ import Students from './pages/Students'
 import AddCourse from './pages/AddCourse'
 import Transcript from './pages/Transcript'
 import CourseCard from './components/CourseCard'
+import CourseDetails from './pages/CourseDetails'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -74,7 +75,16 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                user={user}
+                authenticated={authenticated}
+                convertGrade={convertGrade}
+              />
+            }
+          />
           <Route
             path="/login"
             element={
@@ -100,7 +110,9 @@ function App() {
           />
           <Route
             path="/courses/:id"
-            element={<CourseCard user={user} authenticated={authenticated} />}
+            element={
+              <CourseDetails user={user} authenticated={authenticated} />
+            }
           />
           <Route
             path="/transcript/:id"

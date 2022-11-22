@@ -3,8 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { GetStudentById } from '../services/StudentServices'
 
-const Transcript = ({ user, authenticated, convertGrade }) => {
+const Transcript = ({ user, authenticated, convertGrade, studentId }) => {
   let { id } = useParams()
+  if (!id) {
+    id = studentId
+  }
   let navigate = useNavigate()
   const [studentDetails, setStudentDetails] = useState(null)
 
@@ -31,6 +34,10 @@ const Transcript = ({ user, authenticated, convertGrade }) => {
             </p>
           </div>
         ))}
+        <p>
+          Overall GPA: {studentDetails?.gpa},{' '}
+          {convertGrade(studentDetails?.gpa)}
+        </p>
       </div>
     </div>
   )

@@ -1,22 +1,35 @@
 import { useNavigate } from 'react-router-dom'
+import Transcript from './Transcript'
 
-const Home = () => {
+const Home = ({ user, authenticated, convertGrade }) => {
   let navigate = useNavigate()
   return (
     <div className="home-container col">
-      <div>
-        <h1 className="welcome-message">Welcome to View Your Grades</h1>
-        <h3>Register or Sign-In to view your courses and grades</h3>
-        <section className="welcome-signin">
-          <button onClick={() => navigate('/login')}>
-            {' '}
-            Click here to Log-In
-          </button>
-          <button onClick={() => navigate('/register')}>
-            Click here to Register
-          </button>
-        </section>
-      </div>
+      {user && authenticated ? (
+        <div>
+          <p>User home</p>
+          <Transcript
+            user={user}
+            authenticated={authenticated}
+            convertGrade={convertGrade}
+            studentId={user.id}
+          />
+        </div>
+      ) : (
+        <div>
+          <h1 className="welcome-message">Welcome to View Your Grades</h1>
+          <h3>Register or Sign-In to view your courses and grades</h3>
+          <section className="welcome-signin">
+            <button onClick={() => navigate('/login')}>
+              {' '}
+              Click here to Log-In
+            </button>
+            <button onClick={() => navigate('/register')}>
+              Click here to Register
+            </button>
+          </section>
+        </div>
+      )}
     </div>
   )
 }
