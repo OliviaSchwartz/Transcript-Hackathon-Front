@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { GetGrade } from "../services/GradeServices"
 
-const Search = () => {
+const Search = ({convertGrade}) => {
     const initialState = {
     studentId: '',
     courseId: ''
@@ -45,13 +45,12 @@ const Search = () => {
         {searched ? (
             <div>
             {grade? (
-                <div>{grade?.grade}</div>
+                <div>Grade: {convertGrade(grade?.grade)}</div>
             ) : (
                 <div>That combination of IDs does not exist</div>
             )}
             </div>
         ) : <></>}
-        {/* <p>Grade: {grade?.grade}</p> */}
         </div>
     )
 }
