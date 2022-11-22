@@ -35,8 +35,8 @@ const Students = ({ authenticated, user }) => {
           </div>
         </div>
       ) : (
-        <div>
-          <h1 className="welcome-message">Welcome to View Your Grades</h1>
+        <div className="home-container col">
+          <h1 className="welcome-message">Welcome</h1>
           <h3>Register or Sign-In to view your courses and grades</h3>
           <section className="welcome-signin">
             <button onClick={() => navigate('/login')}>
