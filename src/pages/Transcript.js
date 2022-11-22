@@ -24,23 +24,23 @@ const Transcript = ({ user, authenticated, convertGrade, studentId }) => {
     <div>
       {authenticated && user ? (
         <div className="transcript-container">
-        <p className="display">
-        <em>Student Email:</em> {studentDetails?.email}
-        </p>
-         <p className="display">
-        <em>Student Name:</em> {studentDetails?.name}
-         </p>
+          <p className="display">
+            <em>Student Email:</em> {studentDetails?.email}
+          </p>
+          <p className="display">
+            <em>Student Name:</em> {studentDetails?.name}
+          </p>
           <div className="course-container">
             {studentDetails?.courses.map((course) => (
               <div className="course-name-grade" key={course.id}>
-            <p>
-              <em>Course Name:</em> {course.name}
-            </p>
-            <p>
-              <em>Course Grade(Number/Letter):</em> {course.Grade.grade},{' '}
-              {convertGrade(course.Grade.grade)}
-            </p>
-          </div>
+                <p>
+                  <em>Course Name:</em> {course.name}
+                </p>
+                <p>
+                  <em>Course Grade(Number/Letter):</em> {course.Grade.grade},{' '}
+                  {convertGrade(course.Grade.grade)}
+                </p>
+              </div>
             ))}
             <p className="display">
               Overall GPA: {studentDetails?.gpa},{' '}
@@ -49,8 +49,8 @@ const Transcript = ({ user, authenticated, convertGrade, studentId }) => {
           </div>
         </div>
       ) : (
-        <div>
-          <h1 className="welcome-message">Welcome to View Your Grades</h1>
+        <div className="home-container col">
+          <h1 className="welcome-message">Welcome</h1>
           <h3>Register or Sign-In to view your courses and grades</h3>
           <section className="welcome-signin">
             <button onClick={() => navigate('/login')}>
@@ -63,7 +63,6 @@ const Transcript = ({ user, authenticated, convertGrade, studentId }) => {
           </section>
         </div>
       )}
-
     </div>
   )
 }
