@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { CreateCourse } from '../services/CourseServices'
 
 const AddCourse = ({ user, authenticated }) => {
+  let navigate = useNavigate()
+
   const initialState = {
     name: ''
   }
@@ -13,6 +16,9 @@ const AddCourse = ({ user, authenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const newCourse = await CreateCourse(formState)
+    setFormState(initialState)
+    // navigate(`/courses/${newCourse.id}`)
   }
 
   return (
