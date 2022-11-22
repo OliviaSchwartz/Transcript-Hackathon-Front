@@ -111,7 +111,11 @@ function App() {
           <Route
             path="/courses/:id"
             element={
-              <CourseDetails user={user} authenticated={authenticated} />
+              <CourseDetails
+                user={user}
+                authenticated={authenticated}
+                convertGrade={convertGrade}
+              />
             }
           />
           <Route

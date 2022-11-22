@@ -32,6 +32,7 @@ const Courses = ({ user, authenticated }) => {
           key={course.id}
           name={course.name}
           courseId={course.id}
+          studentId={course.studentId}
           joinOnClick={() => joinCourse(course.id)}
           viewOnClick={() => viewDetails(course.id)}
         />
