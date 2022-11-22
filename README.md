@@ -12,8 +12,7 @@
 
 ### **_Description_**
 
-#### This project is a full-stack application that utilizes Postresql, Express, React and Node. This application has user authentication with JWT that allows a user to login and view their courses, their students and the student's grades/GPA. 
----
+#### This project is a full-stack application that utilizes Postresql, Express, React and Node. This application has user authentication with JWT that allows a user to login and view their transcript, other students, and courses. Students can join a course, update their grade, and see their updated GPA. 
 
 ### **_Technologies Used_**
 
@@ -33,7 +32,7 @@
 
 ### **_Getting Started_**
 
-#### Future Getting Started Here
+#### Register and login. Once you're logged in, head to the courses pages to join a course. Don't see the course you're looking for? Click on add course to add it. 
 
 ---
 
@@ -41,34 +40,30 @@
 
 ---
 
-#### Screenshot 1
-
-
-
----
-
-#### Screenshot 2
-
-
+#### Register Page
+[![Screen-Shot-2022-11-22-at-1-30-10-PM.png](https://i.postimg.cc/PxctdDdH/Screen-Shot-2022-11-22-at-1-30-10-PM.png)](https://postimg.cc/HcwG2VJv)
 
 ---
 
-#### Screenshot 3
+#### Transcript Page
 
-
+[![Screen-Shot-2022-11-22-at-1-30-45-PM.png](https://i.postimg.cc/K4hxMyKs/Screen-Shot-2022-11-22-at-1-30-45-PM.png)](https://postimg.cc/n926ygGv)
 ---
+
+#### Courses Page
+
+[![Screen-Shot-2022-11-22-at-1-30-54-PM.png](https://i.postimg.cc/0jw9jNNw/Screen-Shot-2022-11-22-at-1-30-54-PM.png)](https://postimg.cc/Zv4GD4pb)---
 
 
 ### **_Future Updates_**
 
-- [] Future Update 1
-- [] Future Update 2
-- [] Future Update 3
+- [] CSS Updating
+- [] Add a professor Authentication
+
 
 ---
 
 ### **_Credits_**
 
-Credit 1
-Credit 2
-Credit 3
+##### Stack Overflow- Switch Statement [Stack overflow](https://stackoverflow.com/questions/43948301/score-to-grade-converter-or-why-is-my-switch-statement-buggy-javascript)
+
