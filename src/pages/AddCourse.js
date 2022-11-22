@@ -18,7 +18,7 @@ const AddCourse = ({ user, authenticated }) => {
     e.preventDefault()
     const newCourse = await CreateCourse(formState)
     setFormState(initialState)
-    // navigate(`/courses/${newCourse.id}`)
+    navigate(`/courses`)
   }
 
   return (

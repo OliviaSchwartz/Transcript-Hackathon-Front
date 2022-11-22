@@ -20,7 +20,7 @@ export const GetCoursesById = async (id) => {
 
 export const CreateCourse = async (data) => {
   try {
-    const res = await Client.post(`/addCourse`, data)
+    const res = await Client.post(`/courses/addCourse`, data)
     return res.data
   } catch (error) {
     throw error
