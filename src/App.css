@@ -97,6 +97,7 @@ input::placeholder {
   display:grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
+  text-align: center;
 }
 
  .card {
@@ -115,9 +116,80 @@ input::placeholder {
 .student-card, .course-card {
   margin: 25px;
   padding: 10px;
-  border: 1px solid black
+  border: 1px solid black;
+  box-shadow: 2px 0px 30px rgba(0, 0, 0, 0.3);
 }
 
 .student-info {
   text-align: center;
+}
+
+.details-header {
+  font-size: x-large;
+  text-align: center;
+  font-weight: 600;
+}
+
+.students-list {
+    text-decoration: underline;
+    font-style: italic;
+    text-align: center
+}
+
+.class-name{
+  font-size: large;
+  text-align: center;
+}
+
+.search {
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+}
+
+.search-result {
+  text-align: center;
+  font-size: xx-large;
+  padding: 50px;
+}
+
+.transcript-container {
+  border: 2px solid black;
+  padding: 20px;
+  box-shadow: 2px 0px 30px rgba(0, 0, 0, 0.3);
+  margin: 50px;
+}
+
+.welcome {
+  font-size: 40px;
+}
+
+.course-name-grade {
+  border: 1px dashed black;
+  margin: 3px;
+  padding: 10px;
+}
+
+.display {
+  text-align: center;
+  font-weight: bolder;
+}
+
+h2 {
+  text-align: center;
+}
+
+.course-students{
+  text-align: center;
+  margin: 20px 150px 20px 150px;
+  border: 2px solid black;
+  box-shadow: 2px 0px 30px rgba(0, 0, 0, 0.3)
+}
+
+.course-student-name{
+  font-size: larger;
+  font-weight: bolder;;
 }

@@ -25,7 +25,7 @@ const Search = ({convertGrade}) => {
 
     return (
         <div>
-        <form onSubmit={onSubmit}>
+        <form className="search" onSubmit={onSubmit}>
             <input
                 type="text"
                 id="studentId"
@@ -43,7 +43,7 @@ const Search = ({convertGrade}) => {
             <button type="submit">Search</button>
         </form>
         {searched ? (
-            <div>
+            <div className="search-result">
             {grade? (
                 <div>Grade: {convertGrade(grade?.grade)}</div>
             ) : (

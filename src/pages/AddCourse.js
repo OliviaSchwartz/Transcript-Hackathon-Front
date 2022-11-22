@@ -25,7 +25,7 @@ const AddCourse = ({ user, authenticated }) => {
     <div>
       <div className="course-form">
         <h2>Add a new course</h2>
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form search" onSubmit={handleSubmit}>
           <label className="label courseField" htmlFor="name">
             Name:
           </label>
