@@ -97,7 +97,13 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route
             path="/search"
-            element={<Search convertGrade={convertGrade} />}
+            element={
+              <Search
+                user={user}
+                authenticated={authenticated}
+                convertGrade={convertGrade}
+              />
+            }
           />
           <Route
             path="/courses"

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { GetGrade } from "../services/GradeServices"
 
-const Search = ({convertGrade}) => {
+const Search = ({convertGrade, user, authenticated}) => {
     const initialState = {
     studentId: '',
     courseId: ''
@@ -24,6 +24,10 @@ const Search = ({convertGrade}) => {
   }
 
     return (
+        <div>
+      {authenticated && user ? (
+        
+        
         <div>
         <form onSubmit={onSubmit}>
             <input
@@ -52,6 +56,15 @@ const Search = ({convertGrade}) => {
             </div>
         ) : <></>}
         </div>
+      ) : (
+        <div>
+          <p>You are not signed in</p>
+        </div>
+      )}
+    </div>
+
+
+
     )
 }
 export default Search

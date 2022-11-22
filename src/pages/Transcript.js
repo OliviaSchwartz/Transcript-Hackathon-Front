@@ -21,24 +21,42 @@ const Transcript = ({ user, authenticated, convertGrade, studentId }) => {
   }, [user])
 
   return (
-    <div className="transcript-container">
-      <p>{studentDetails?.email}</p>
-      <p>Student Name:{studentDetails?.name}</p>
-      <div className="course-container">
-        {studentDetails?.courses.map((course) => (
-          <div key={course.id}>
-            <p>Course Name: {course.name}</p>
+    <div>
+      {authenticated && user ? (
+        <div className="transcript-container">
+          <p>{studentDetails?.email}</p>
+          <p>Student Name:{studentDetails?.name}</p>
+          <div className="course-container">
+            {studentDetails?.courses.map((course) => (
+              <div key={course.id}>
+                <p>Course Name: {course.name}</p>
+                <p>
+                  Course Grade(Number/Letter): {course.Grade.grade},{' '}
+                  {convertGrade(course.Grade.grade)}
+                </p>
+              </div>
+            ))}
             <p>
-              Course Grade(Number/Letter): {course.Grade.grade},{' '}
-              {convertGrade(course.Grade.grade)}
+              Overall GPA: {studentDetails?.gpa},{' '}
+              {convertGrade(studentDetails?.gpa)}
             </p>
           </div>
-        ))}
-        <p>
-          Overall GPA: {studentDetails?.gpa},{' '}
-          {convertGrade(studentDetails?.gpa)}
-        </p>
-      </div>
+        </div>
+      ) : (
+        <div>
+          <h1 className="welcome-message">Welcome to View Your Grades</h1>
+          <h3>Register or Sign-In to view your courses and grades</h3>
+          <section className="welcome-signin">
+            <button onClick={() => navigate('/login')}>
+              {' '}
+              Click here to Log-In
+            </button>
+            <button onClick={() => navigate('/register')}>
+              Click here to Register
+            </button>
+          </section>
+        </div>
+      )}
     </div>
   )
 }
