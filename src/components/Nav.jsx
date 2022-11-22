@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-
+import myImage from '../images/intdev.png'
 
 const Nav = ({ authenticated, user, handleLogOut }) => {
 
@@ -14,6 +14,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
           <Link onClick={handleLogOut} to="/">
             Sign Out
           </Link>
+          <Link to='/'> <img src={myImage}  alt=""/> </Link>
         </nav>
       )
     

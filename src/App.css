@@ -13,7 +13,6 @@ button {
   margin: 1em;
 }
 
-
 header {
   height: 3em;
   display: flex;
@@ -23,6 +22,8 @@ header {
 }
 
 nav {
+  text-decoration: none; 
+  color: black;
   margin-right: 1em;
   display: flex;
   flex-direction: row-reverse;
@@ -31,6 +32,8 @@ nav {
 
 nav a,
 nav h3 {
+  text-decoration: none; 
+  color: black;
   margin: auto 1em;
   padding: 5px 10px;
   border-radius: 6px;
@@ -186,7 +189,7 @@ h2 {
   text-align: center;
   margin: 20px 150px 20px 150px;
   border: 2px solid black;
-  box-shadow: 2px 0px 30px rgba(0, 0, 0, 0.3)
+  box-shadow: 2px 0px 30px rgba(0, 0, 0, 0.3);
 }
 
 .course-student-name{
