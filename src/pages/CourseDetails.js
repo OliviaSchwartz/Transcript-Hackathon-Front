@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { GetCoursesById } from '../services/CourseServices'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { UpdateGrade } from '../services/GradeServices'
+import { UpdateGpa } from '../services/StudentServices'
 
 const CourseDetails = ({ user, authenticated }) => {
   let { id } = useParams()
+  let navigate = useNavigate()
 
   const initialState = {
     courseId: id,
@@ -26,6 +28,7 @@ const CourseDetails = ({ user, authenticated }) => {
   const handleSubmit = async (e, id) => {
     e.preventDefault()
     await UpdateGrade({ ...formState, studentId: id })
+    await UpdateGpa(id)
     setFormState(initialState)
     setStudentToEdit(null)
     getStudentsInCourse()
@@ -42,38 +45,56 @@ const CourseDetails = ({ user, authenticated }) => {
 
   return (
     <div>
-      <p className="details-header">Course Details</p>
-      <p className="students-list">Students Enrolled in:</p>
-      <p className="class-name">{students?.name}</p>
-      <div>
-        {students?.students.map((student) => (
-          <div className="course-students" key={student.id}>
-            <p className="course-student-name">{student.name}</p>
-            <p>{student.Grade.grade}</p>
-            {studentToEdit === student.id ? (
-              <form
-                className="form"
-                onSubmit={(e) => handleSubmit(e, student.id)}
-              >
-                <input
-                  className="input"
-                  type="text"
-                  id="grade"
-                  placeholder="New Grade in 4 Point Scale"
-                  onChange={(e) => handleChange(e)}
-                  value={formState.grade}
-                  // required
-                />
-                <button className="create-course-button" type="submit">
+      {authenticated && user ? (
+        <div>
+           <p className="details-header">Course Details</p>
+          <p className="class-name">{students?.name}</p>
+          {students?.students.map((student) => (
+            <div className="course-students" key={student.id}>
+              <p className="course-student-name">{student.name}</p>
+              <p>{student.Grade.grade}</p>
+              {studentToEdit === student.id ? (
+                <form
+                  className="form"
+                  onSubmit={(e) => handleSubmit(e, student.id)}
+                >
+                  <input
+                    className="input"
+                    type="text"
+                    id="grade"
+                    placeholder="New Grade in 4 Point Scale"
+                    onChange={(e) => handleChange(e)}
+                    value={formState.grade}
+                    // required
+                  />
+                  <button className="create-course-button" type="submit">
+                    Update Grade
+                  </button>
+                </form>
+              ) : (
+                <button onClick={() => onClick(student.id)}>
                   Update Grade
                 </button>
-              </form>
-            ) : (
-              <button onClick={() => onClick(student.id)}>Edit</button>
-            )}
-          </div>
-        ))}
-      </div>
+              )}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div>
+          <h1 className="welcome-message">Welcome to View Your Grades</h1>
+          <h3>Register or Sign-In to view your courses and grades</h3>
+          <section className="welcome-signin">
+            <button onClick={() => navigate('/login')}>
+              {' '}
+              Click here to Log-In
+            </button>
+            <button onClick={() => navigate('/register')}>
+              Click here to Register
+            </button>
+          </section>
+        </div>
+      )}
+
     </div>
   )
 }

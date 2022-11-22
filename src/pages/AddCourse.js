@@ -23,27 +23,45 @@ const AddCourse = ({ user, authenticated }) => {
 
   return (
     <div>
-      <div className="course-form">
-        <h2>Add a new course</h2>
-        <form className="form search" onSubmit={handleSubmit}>
-          <label className="label courseField" htmlFor="name">
-            Name:
-          </label>
-          <input
-            className="input"
-            type="text"
-            id="name"
-            placeholder="Course Name"
-            cols="30"
-            onChange={handleChange}
-            value={formState.name}
-            required
-          />
-          <button className="create-course-button" type="submit">
-            Create Course
-          </button>
-        </form>
-      </div>
+      {authenticated && user ? (
+        <div>
+          <div className="course-form">
+            <h2>Add a new course</h2>
+            <form className="form search" onSubmit={handleSubmit}>
+              <label className="label courseField" htmlFor="name">
+                Name:
+              </label>
+              <input
+                className="input"
+                type="text"
+                id="name"
+                placeholder="Course Name"
+                cols="30"
+                onChange={handleChange}
+                value={formState.name}
+                required
+              />
+              <button className="create-course-button" type="submit">
+                Create Course
+              </button>
+            </form>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <h1 className="welcome-message">Welcome to View Your Grades</h1>
+          <h3>Register or Sign-In to view your courses and grades</h3>
+          <section className="welcome-signin">
+            <button onClick={() => navigate('/login')}>
+              {' '}
+              Click here to Log-In
+            </button>
+            <button onClick={() => navigate('/register')}>
+              Click here to Register
+            </button>
+          </section>
+        </div>
+      )}
     </div>
   )
 }

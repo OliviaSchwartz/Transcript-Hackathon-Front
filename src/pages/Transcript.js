@@ -21,16 +21,18 @@ const Transcript = ({ user, authenticated, convertGrade, studentId }) => {
   }, [user])
 
   return (
-    <div className="transcript-container">
-      <p className="display">
+    <div>
+      {authenticated && user ? (
+        <div className="transcript-container">
+        <p className="display">
         <em>Student Email:</em> {studentDetails?.email}
-      </p>
-      <p className="display">
+        </p>
+         <p className="display">
         <em>Student Name:</em> {studentDetails?.name}
-      </p>
-      <div className="course-container">
-        {studentDetails?.courses.map((course) => (
-          <div className="course-name-grade" key={course.id}>
+         </p>
+          <div className="course-container">
+            {studentDetails?.courses.map((course) => (
+              <div className="course-name-grade" key={course.id}>
             <p>
               <em>Course Name:</em> {course.name}
             </p>
@@ -39,12 +41,29 @@ const Transcript = ({ user, authenticated, convertGrade, studentId }) => {
               {convertGrade(course.Grade.grade)}
             </p>
           </div>
-        ))}
-        <p className="display">
-          Overall GPA: {studentDetails?.gpa},{' '}
-          {convertGrade(studentDetails?.gpa)}
-        </p>
-      </div>
+            ))}
+            <p className="display">
+              Overall GPA: {studentDetails?.gpa},{' '}
+              {convertGrade(studentDetails?.gpa)}
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <h1 className="welcome-message">Welcome to View Your Grades</h1>
+          <h3>Register or Sign-In to view your courses and grades</h3>
+          <section className="welcome-signin">
+            <button onClick={() => navigate('/login')}>
+              {' '}
+              Click here to Log-In
+            </button>
+            <button onClick={() => navigate('/register')}>
+              Click here to Register
+            </button>
+          </section>
+        </div>
+      )}
+
     </div>
   )
 }
